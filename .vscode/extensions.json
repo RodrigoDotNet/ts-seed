@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "orta.vscode-jest",
+    "firsttris.vscode-jest-runner",
+    "esbenp.prettier-vscode",
+    "dskwrk.vscode-generate-getter-setter",
+    "pmneo.tsimporter",
+    "stringham.move-ts",
+    "kiteco.kite"
+  ]
+}

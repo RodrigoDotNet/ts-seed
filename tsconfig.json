@@ -1,14 +1,16 @@
 {
-  "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
-    "rootDir": "src",
-    "outDir": "build",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": false
-  },
-  "exclude": ["coverage", "**/__tests__"],
-  "buildOptions": {}
+    "compilerOptions": {
+        "target": "es2016",
+        "module": "commonjs",
+        "rootDir": "src",
+        "outDir": "build",
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": false
+    },
+    "include": ["src"],
+    "exclude": ["coverage", "**/__tests__", "jest.config.ts"],
+    "buildOptions": {}
 }

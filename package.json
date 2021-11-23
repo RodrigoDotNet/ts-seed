@@ -1,52 +1,57 @@
 {
-  "name": "ts-base",
-  "version": "1.0.0",
-  "main": "./build/start/server.js",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.13",
-    "@types/jest": "^27.0.3",
-    "@types/node": "^16.11.9",
-    "@types/supertest": "^2.0.11",
-    "@typescript-eslint/parser": "^5.4.0",
-    "eslint": "^8.3.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "husky": "^7.0.4",
-    "jest": "^27.3.1",
-    "lint-staged": "12.1.2",
-    "prettier": "^2.4.1",
-    "rimraf": "^3.0.2",
-    "supertest": "^6.1.6",
-    "ts-jest": "^27.0.7",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.5.2"
-  },
-  "scripts": {
-    "build": "rimraf ./build && tsc",
-    "dev": "ts-node-dev --respawn --transpile-only --inspect -- ./src/start/server.ts",
-    "lint": "eslint --fix --ext .ts",
-    "test": "jest",
-    "postinstall": "husky install"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1"
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix"
-    ],
-    "*.{json,md,scss,yaml,yml}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "ts-base",
+    "version": "1.0.0",
+    "main": "./build/start/server.js",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/cors": "^2.8.12",
+        "@types/express": "^4.17.13",
+        "@types/jest": "^27.0.3",
+        "@types/node": "^16.11.9",
+        "@types/supertest": "^2.0.11",
+        "@typescript-eslint/parser": "^5.4.0",
+        "eslint": "^8.3.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "husky": "^7.0.4",
+        "jest": "^27.3.1",
+        "lint-staged": "12.1.2",
+        "prettier": "^2.4.1",
+        "rimraf": "^3.0.2",
+        "supertest": "^6.1.6",
+        "ts-jest": "^27.0.7",
+        "ts-node-dev": "^1.1.8",
+        "typescript": "^4.5.2"
+    },
+    "scripts": {
+        "build": "rimraf ./build && tsc",
+        "dev": "ts-node-dev --respawn --transpile-only --inspect -- ./src/start/server.ts",
+        "lint": "eslint --fix --ext .ts",
+        "test": "jest",
+        "test:verbose": "jest --passWithNoTests --runInBand",
+        "test:unit": "npm test -- --watch -c jest-unit-config.js",
+        "test:staged": "npm test -- --findRelatedTests",
+        "test:ci": "npm test -- --coverage",
+        "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
+        "postinstall": "husky install"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1"
+    },
+    "lint-staged": {
+        "*.{js,ts}": [
+            "eslint --fix"
+        ],
+        "*.{json,md,scss,yaml,yml}": [
+            "prettier --write"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
     }
-  }
 }
