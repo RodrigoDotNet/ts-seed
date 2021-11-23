@@ -1,0 +1,5 @@
+*.sh eol=lf
+*.conf eol=lf
+*.js text
+*.ts text
+Dockerfile eol=lf
